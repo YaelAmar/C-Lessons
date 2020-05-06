@@ -22,7 +22,11 @@ namespace Lesson8Abstract
             {
               s[i].Print();
             }
-
+            //לולאה שעוברת על מערך של אוביקטים
+            foreach (Shape item in s)
+            {
+                item.Print();
+            }
             Console.ReadLine();
 
         }
