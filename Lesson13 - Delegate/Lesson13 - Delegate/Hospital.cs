@@ -15,7 +15,8 @@ namespace Lesson13___Delegate
         public List<Doctor> Doctors = new List<Doctor>();
         public List<Professor> Professors = new List<Professor>();
 
-
+        public event Empty OnDelete;
+        public event Empty OnAdd;
 
         public Hospital()
         {
@@ -49,8 +50,21 @@ namespace Lesson13___Delegate
             Console.WriteLine("Well Done!! you have enugh doctors!!!");
         }
 
+        public void DoctorOut(Doctor doctor)
+        {
 
+          int a=  Doctors.IndexOf(doctor);
+            Doctors.RemoveAt(a);
+            if (OnDelete != null)
+                OnDelete();
+        }
       
+        public void DoctorIn(Doctor doctor)
+        {
+            Doctors.Add(doctor);
+            if (Doctors.Count > 10)
+                OnAdd();
+        }
 
     }
 }
