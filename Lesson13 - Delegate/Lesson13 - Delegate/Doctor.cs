@@ -9,6 +9,8 @@ namespace Lesson13___Delegate
     delegate void Empty();
     class Doctor
     {
+        //2.
+        public Count CountDoctorsInHospital;
         public string Name { get; set; }
         
        

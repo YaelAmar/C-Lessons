@@ -33,8 +33,9 @@ namespace Lesson13___Delegate
             }
            
         }
-        public void Check(/*2. יצירת נציג*/Empty empty)
+        public void Check(/*2. יצירת מופע מסוג נציג*/Empty empty)
         {
+            Empty empty1;
             if (Doctors.Count <= 5)
                 //3. הפעלת הנציג
                 empty();
@@ -62,7 +63,7 @@ namespace Lesson13___Delegate
         public void DoctorIn(Doctor doctor)
         {
             Doctors.Add(doctor);
-            if (Doctors.Count > 10)
+            if (Doctors.Count > 10&&OnAdd!=null)
                 OnAdd();
         }
 

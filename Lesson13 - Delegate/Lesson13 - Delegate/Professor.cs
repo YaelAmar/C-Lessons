@@ -8,8 +8,7 @@ namespace Lesson13___Delegate
 {
     class Professor:Doctor
     {
-        //2.
-        public Count CountDoctorsInHospital;
+       
         public Professor()
         {
             //3.

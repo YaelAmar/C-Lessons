@@ -20,7 +20,7 @@ namespace Lesson13___Delegate
 
         public static void BreakMassage()
         {
-            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.BackgroundColor = ConsoleColor.Cyan;
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("one doctor can take a break, there are enough doctors");
 
@@ -41,9 +41,9 @@ namespace Lesson13___Delegate
 
             //דרך ארוכה
             Empty e = new Empty(hospital.MinEmployeeWarning);
-            e+= hospital.Good;
+            e= hospital.Good;
             //נציג ניתן לשרשור
-            e += hospital.Good; e += hospital.Good; e += hospital.Good; e += hospital.Good;
+            e -= hospital.Good; e += hospital.Good; e += hospital.Good; e += hospital.Good;
 
             hospital.Check(e);
 
@@ -98,19 +98,19 @@ namespace Lesson13___Delegate
  *
  * ארבע דרכים להצבת הפונקציה בנציג:
  * א. יצירת משתנה מסוג הנציג, אליו מוכנסת הפונקציה הרצויה ולאחר מכן הפעלת הנציג 
- *          Empty e = new Empty(hospital.MinEmployeeWarning);
+ *          Empty e = new Empty();
             e= hospital.Good;
    ב. קריאה לפונקציה הרצויה ובתוכה הגדרת הנציג
             hospital.Check(new Empty(hospital.Good));
    ג. קריאה מקוצרת - קריאה ישירות לפונקציה שמתאימה לנציג
              hospital.Check(hospital.MinEmployeeWarning);       
     ד. שרשור כמה פונקציות
-             e= hospital.Good;
+             e+= hospital.Good;
 
 
 
     event- ארוע
-    נציג שמור ומוגן יותר שמטרתו לייצג ארועים שקורים בזמן ריצת התכנית והתייחסות אליהם.
+    ארוע הוא נציג שמור ומוגן יותר שמטרתו לייצג ארועים שקורים בזמן ריצת התכנית והתייחסות אליהם.
     שונה מנציג ב:
     ניתן להגדיר event רק כחבר מחלקה (member) ולא ניתן בתוך פונקציה או כפרמטר לפונקציה
     ניתן להפעיל    event רק באותה מחלקה בה הוא נכתב
