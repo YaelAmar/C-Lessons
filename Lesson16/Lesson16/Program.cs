@@ -73,6 +73,14 @@ namespace Lesson16
             {
                 Console.WriteLine(item.X + " , " + item.Y);
             }
+
+
+            var l5 = from o in L
+                     where o.X > 100
+                     orderby o.Y
+                     select o;
+
+            var l6 = L.Where(p => p.X > 3).OrderBy(p => p.Y).ToList();
             Console.ReadLine();
         }
 
