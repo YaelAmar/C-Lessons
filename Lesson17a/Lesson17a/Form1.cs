@@ -33,5 +33,10 @@ namespace Lesson17a
         {
             btnOk.BackColor = button1.BackColor;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("שלום למגמת מחשבים","הודעה חשובה", MessageBoxButtons.YesNoCancel);
+        }
     }
 }
