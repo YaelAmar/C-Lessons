@@ -18,7 +18,10 @@ namespace Lesson18
             timer1.Start();
 
            DialogResult dialogResult= MessageBox.Show("fjhdgj","jhf", MessageBoxButtons.YesNo);
-          if(dialogResult==DialogResult.Yes)
+            //    if(dialogResult==DialogResult.Yes)
+
+            StartForm startForm = new StartForm();
+            this.Hide();
 
         }
         int min = 0;
