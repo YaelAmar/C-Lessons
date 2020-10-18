@@ -17,40 +17,49 @@ namespace WriteAndRead
         {
             InitializeComponent();
         }
-        string path = "../../f1.txt";
-        private void button1_Click(object sender, EventArgs e)
+        //הגדרת כתובת
+        const string path = "../../List.txt";
+        private void button1_Click_1(object sender, EventArgs e)
         {
+            //הגדרת זרם 
             FileStream fs;
             if(File.Exists(path))
             {
-                fs = new FileStream(path,FileMode.Append,FileAccess.Write);
+                fs=new FileStream(path, FileMode.Append, FileAccess.Write);
             }
             else
             {
                 fs = new FileStream(path, FileMode.Create, FileAccess.Write);
             }
+            //הגדרת כתבן ושיוכו לזרם
+            StreamWriter writer = new StreamWriter(fs, Encoding.UTF8);
+            writer.WriteLine("שלום");
 
-            StreamWriter writer = new StreamWriter(fs);
-           
-            writer.WriteLine(textBox1.Text);
-           
+            //סגירת הזרם
             writer.Close();
-            fs.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(path,
-                                     FileMode.Open,
-                                     FileAccess.Read);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FileStream fs;
+            //if (File.Exists(path))
+            //{
+                fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("עוד לא יצרת קבלה");
+            //}
+          
             StreamReader reader = new StreamReader(fs);
-
-            string str = reader.ReadToEnd();
-            label1.Text = str;
-
+            label1.Text= reader.ReadToEnd();
             reader.Close();
-            fs.Close();
+            File.Delete(path);
         }
     }
     }
